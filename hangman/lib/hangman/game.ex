@@ -47,7 +47,7 @@ defmodule Hangman.Game do
   defp score_guess(game, _good_guess = true) do
     new_state = MapSet.new(game.letters)
     |> MapSet.subset?(game.used)
-    |> maybe_won
+    |> maybe_won()
     Map.put(game, :game_state, new_state)
   end
 
